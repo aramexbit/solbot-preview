@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#062c56"><title>PREVIEW - SolBot Fishing Live — 3D Anime</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{font-family:Nunito,system-ui,sans-serif;color:#f4fbff;background:#041d3a;font-synthesis:none}*{box-sizing:border-box}html,body,#app{margin:0;width:100%;height:100%;height:100dvh;overflow:hidden;overscroll-behavior:none}#app{position:relative;min-height:0;background:linear-gradient(#1684d8,#053a70 55%,#031c39)}#scene-wrap{position:absolute;inset:0;touch-action:none}#world{width:100%;height:100%;display:block;touch-action:none}.glass{background:linear-gradient(145deg,rgba(5,35,75,.88),rgba(3,23,52,.76));border:1px solid rgba(96,194,255,.62);box-shadow:0 8px 28px #00172b88,inset 0 1px #b8eaff35;backdrop-filter:blur(12px);border-radius:17px}.topbar{position:absolute;top:max(12px,env(safe-area-inset-top));left:max(16px,env(safe-area-inset-left));right:max(16px,env(safe-area-inset-right));display:flex;gap:12px;align-items:stretch;z-index:5}.brand{display:flex;align-items:center;gap:8px;min-width:240px;text-shadow:0 3px 8px #001b45}.brand-fish{font-size:44px;filter:drop-shadow(0 4px 3px #003)}.brand strong{display:block;font-size:clamp(21px,2.1vw,32px);font-weight:900;line-height:1;color:white}.brand em{font-style:normal;color:#ffbd38}.brand small{font-size:10px;letter-spacing:2px;font-weight:900}.metric{min-width:130px;flex:1;padding:9px 13px;border:1px solid #56bfff9c;border-radius:14px;background:linear-gradient(130deg,#07519acb,#031d49e8);box-shadow:0 5px 18px #001b4d80}.metric span,.metric small{display:block;color:#b6dcff;font-size:10px;font-weight:800;letter-spacing:.8px}.metric b{display:block;font-size:clamp(16px,1.55vw,23px);line-height:1.25}.positive{color:#50ffae}.live-pill{min-width:115px;border-radius:14px;background:#003d3acc;border:1px solid #27f6a0;padding:9px 12px;display:grid;grid-template-columns:14px 1fr;align-content:center;column-gap:7px}.live-pill i{width:12px;height:12px;border-radius:50%;background:#ffc04d;grid-row:span 2;align-self:center;box-shadow:0 0 12px currentColor}.live-pill b{font-size:13px;color:#9dffce}.live-pill small{font-size:9px;color:#b8e9d2}.live-pill.online i{background:#37ff9c}.icon-btn{width:44px;border:1px solid #7bcaff88;border-radius:13px;background:#063b71d9;color:white;font-size:22px}.event-panel,.scanner-panel,.position-panel{position:absolute;z-index:4;padding:13px 15px}.event-panel{right:16px;top:112px;width:230px;max-height:37vh;overflow:hidden}.scanner-panel{left:16px;top:112px;width:245px;max-height:44vh;overflow:hidden}.position-panel{right:16px;bottom:205px;width:230px;max-height:24vh;overflow:auto}.glass h2{font-size:13px;letter-spacing:.7px;margin:0 0 10px;font-weight:900}.subhead{font-size:9px;letter-spacing:1px;color:#8ccfff;font-weight:900;margin:9px 0 5px}.watch-head{border-top:1px solid #6cbfff33;padding-top:8px}.token-list,.event-list,.position-list{display:grid;gap:6px;overflow:auto;max-height:190px}.token,.event,.position{padding:7px 8px;border-radius:9px;background:#0b4b7b70;border:1px solid #79caff26;font-size:10px}.token{display:flex;justify-content:space-between;gap:6px}.token b{font-size:11px}.token small,.event small,.position small{display:block;color:#a8d8f7;font-size:9px}.token .tag{color:#ffcf5a;font-weight:900}.event{display:grid;grid-template-columns:24px 1fr;gap:5px}.event .ico{font-size:17px}.event strong{font-size:10px}.event.buy strong{color:#ffc64b}.event.sell strong{color:#4dffad}.event.sl strong{color:#ff7777}.event.tp1 strong{color:#ffd24d}.event.profit strong{color:#4dffad}.event.lose strong{color:#ff7777}.event.signal strong{color:#7cc7ff}.event.info strong{color:#cfe6ff}.empty,.muted{font-size:10px;color:#a8cde9;padding:8px}.position b{color:#ffdf82}.position .pnl{float:right;color:#56ffb0}.bottom-grid{position:absolute;z-index:4;left:max(16px,env(safe-area-inset-left));right:260px;bottom:max(14px,env(safe-area-inset-bottom));display:grid;grid-template-columns:minmax(0,1.6fr) minmax(190px,.8fr);gap:12px}.history-panel,.status-panel{padding:12px 14px;min-height:150px}.history-panel h2,.status-panel h2{margin-bottom:7px}.table-wrap{overflow:auto;max-height:118px}table{border-collapse:collapse;width:100%;font-size:10px;text-align:left}th{color:#9bd4ff;font-size:9px;letter-spacing:.7px}td,th{padding:5px 7px;border-bottom:1px solid #a4dfff22}td:nth-child(3){font-weight:900}.buy-text{color:#ff7777}.sell-text{color:#52ffac}.status-row{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #a4dfff20;font-size:10px}.status-row span{color:#a9d8f8}.status-row b{color:#fff}.tiny-note{font-size:8px;color:#a4c9e4;margin-top:8px}.toast{position:absolute;z-index:8;top:95px;left:50%;transform:translateX(-50%);background:#053e68ed;border:1px solid #77d2ff;padding:9px 16px;border-radius:30px;font-size:12px;opacity:0;transition:opacity .25s;pointer-events:none}.toast.show{opacity:1}#app.ui-hidden .event-panel,#app.ui-hidden .scanner-panel,#app.ui-hidden .position-panel,#app.ui-hidden .bottom-grid{display:none}#app.ui-hidden .topbar .metric,#app.ui-hidden .topbar .live-pill{display:none}@media(max-width:900px){.topbar{gap:6px}.brand{min-width:145px}.brand-fish{font-size:28px}.brand strong{font-size:19px}.metric{min-width:90px;padding:7px}.metric span,.metric small{font-size:8px}.event-panel{width:190px;right:8px;top:100px}.scanner-panel{left:8px;top:100px;width:195px}.position-panel{right:8px;width:190px;bottom:190px}.bottom-grid{left:8px;right:8px;bottom:8px;grid-template-columns:1fr 170px}.history-panel,.status-panel{padding:9px}.glass h2{font-size:11px}}@media(max-width:620px){.topbar{left:7px;right:7px;top:max(7px,env(safe-area-inset-top));flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.topbar::-webkit-scrollbar{display:none}.brand{min-width:140px;height:46px}.metric{flex:0 0 auto;min-width:96px}.metric:nth-of-type(4){display:none}.live-pill{min-width:95px;flex:0 0 auto}.icon-btn{height:40px;flex:0 0 auto}.scanner-panel{top:106px;left:7px;width:155px;padding:9px}.event-panel{top:106px;right:7px;width:158px;padding:9px}.position-panel{display:none}.bottom-grid{grid-template-columns:1fr;bottom:max(7px,env(safe-area-inset-bottom))}.status-panel{display:none}.history-panel{min-height:115px}.table-wrap{max-height:75px}.glass h2{font-size:10px}.token,.event{padding:5px;font-size:9px}}
+
+
+#boot-status{position:absolute;z-index:20;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,calc(100vw - 32px));padding:18px 20px;border:1px solid #8bd8ff;border-radius:16px;background:rgba(3,28,57,.94);box-shadow:0 12px 40px #00152c99;color:#f4fbff;text-align:center;font:600 14px Nunito,system-ui,sans-serif}
+#boot-status b{display:block;font-size:17px;margin-bottom:7px}#boot-status small{display:block;color:#b8dcf5;line-height:1.5}#boot-status.error{border-color:#ff9c83}#boot-status[hidden]{display:none}
+</style>
+  <script>
+// Data live HANYA dari /api/status + /api/events (bot di PC).
+// Tidak ada file data di situs — halaman kosong sampai bot di-start.
+// WebSocket opsional: isi wsUrl dengan URL WSS bridge Python bila ada.
+window.SOLBOT_CONFIG = {
+  wsUrl: "",
+  reconnectMs: 2500,
+  demoWhenOffline: true
+};
+
+</script>
+  <script>
+    (() => {
+      const show = (title, detail) => {
+        const el = document.getElementById('boot-status');
+        if (!el) return;
+        el.hidden = false; el.classList.add('error');
+        el.innerHTML = '<b></b><small></small>';
+        el.querySelector('b').textContent = title;
+        el.querySelector('small').textContent = detail;
+      };
+      window.__solbotShowError = show;
+      window.addEventListener('error', (e) => {
+        show('Kesalahan JavaScript 3D', (e.message || 'Unknown error') + (e.filename ? ' · ' + e.filename.split('/').pop() + ':' + e.lineno : ''));
+        console.error('SolBot runtime error:', e.error || e.message, e.error?.stack || '');
+      });
+      window.addEventListener('unhandledrejection', (e) => {
+        show('Three.js gagal dijalankan', String(e.reason?.stack || e.reason || 'Kesalahan module/CDN.'));
+        console.error('SolBot promise error:', e.reason);
+      });
+      setTimeout(() => {
+        if (!window.__solbot3dStarted) show('3D belum berhasil dimuat', 'Periksa koneksi internet — Three.js dimuat dari CDN. Coba muat ulang halaman.');
+      }, 9000);
+    })();
+  </script>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js"}}</script>
+</head>
+<body>
+  <main id="app">
+    <div id="boot-status"><b>SolBot Fishing 3D</b><small>Memuat Three.js dan dunia laut 3D… Pastikan internet aktif.</small></div>
+    <div id="scene-wrap"><canvas id="world"></canvas></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-fish">🐟</div><div><strong>SolBot <em>Fishing</em></strong><small>TRADE • CATCH • PROFIT</small></div></div>
+      <div class="metric"><span>DEMO BALANCE</span><b id="balance">— SOL</b><small id="balanceUsd">Awaiting bot data</small></div>
+      <div class="metric"><span>OPEN POSITIONS</span><b id="openCount">0</b><small>Active catches</small></div>
+      <div class="metric"><span>WIN / LOSS</span><b class="positive" id="pnl">+0.00 SOL</b><small id="tradeCount">0 trades</small></div>
+      <div class="live-pill" id="livePill"><i></i><b>CONNECTING</b><small>Menunggu bot</small></div>
+      <button class="icon-btn" id="soundBtn" title="Toggle sound">♫</button><button class="icon-btn" id="fsBtn" title="Fullscreen (sembunyikan panel)">⛶</button>
+    </header>
+
+    <aside class="event-panel glass"><h2>💰 TOKEN TERJUAL</h2><div id="events" class="event-list"><div class="event muted">Belum ada token terjual</div></div></aside>
+    <section class="position-panel glass"><h2>🎣 ACTIVE CATCHES</h2><div id="positions" class="position-list"><div class="empty">Belum ada posisi aktif</div></div></section>
+    <section class="bottom-grid">
+      <div class="glass history-panel"><h2>📊 WIN / LOSS</h2><div id="winlose"><div style="margin-bottom:8px"><span style="display:block;color:#b6dcff;font-size:10px;font-weight:800;letter-spacing:.8px">TOTAL PNL</span><b id="wlTotal" style="font-size:clamp(20px,2vw,28px);line-height:1.2">—</b></div><div class="status-row"><span>✅ Menang</span><b id="wlWins">0</b></div><div class="status-row"><span>🔴 Kalah</span><b id="wlLosses">0</b></div><div class="status-row"><span>Win rate</span><b id="wlRate">—</b></div><div class="status-row"><span>Total trade</span><b id="wlTrades">0</b></div></div></div>
+      <div class="glass status-panel"><h2>🌊 OCEAN STATUS</h2><div class="status-row"><span>Bot mode</span><b id="mode">—</b></div><div class="status-row"><span>Scanner candidates</span><b id="scanCount">0</b></div><div class="status-row"><span>Watchlist</span><b id="watchCount">0</b></div><div class="status-row"><span>Last update</span><b id="updated">Waiting…</b></div><div class="status-row"><span>Connection</span><b id="connectionText">Connecting</b></div><div class="tiny-note">Visualisasi mengikuti data bot. Bukan sinyal atau perintah trading.</div></div>
+    </section>
+    <div class="toast" id="toast"></div>
+  </main>
+  <script type="module">
+import * as THREE from 'three';
+
+const $ = (id) => document.getElementById(id);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x77c8f5);
+scene.fog = new THREE.FogExp2(0x4aa8d8, 0.008);
+const camera = new THREE.PerspectiveCamera(43, innerWidth / innerHeight, 0.1, 180);
+camera.position.set(0, 7.6, 17.5); camera.lookAt(0, 1.45, 0);
+const renderer = new THREE.WebGLRenderer({ canvas: $('world'), antialias: true, alpha: false });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 1.7)); renderer.setSize(innerWidth, innerHeight);
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.18;
+scene.add(new THREE.HemisphereLight(0xc9f2ff, 0x123c60, 2.1));
+const sun = new THREE.DirectionalLight(0xffefcf, 3.2); sun.position.set(-7, 13, 7); sun.castShadow = true; sun.shadow.mapSize.set(1024,1024); scene.add(sun);
+const fill = new THREE.PointLight(0x36bfff, 18, 35); fill.position.set(2,4,-4); scene.add(fill);
+
+const mat = (color, roughness=.72, metalness=0) => new THREE.MeshStandardMaterial({color,roughness,metalness});
+const sphere = new THREE.SphereGeometry(1,20,14);
+function mesh(geo, material, parent, pos=[0,0,0], scale=[1,1,1]) { const o=new THREE.Mesh(geo,material); o.position.set(...pos); o.scale.set(...scale); o.castShadow=true; o.receiveShadow=true; parent.add(o); return o; }
+function box(parent, color, pos, scale, rot=[0,0,0]) { const o=mesh(new THREE.BoxGeometry(1,1,1),mat(color),parent,pos,scale); o.rotation.set(...rot); return o; }
+
+// Sky dome and distant island scenery.
+mesh(new THREE.SphereGeometry(95,32,20), new THREE.MeshBasicMaterial({color:0x72c8f4,side:THREE.BackSide}), scene,[0,0,0]);
+const island = new THREE.Group(); scene.add(island);
+mesh(new THREE.ConeGeometry(4.2,3.2,7),mat(0x497e50),island,[-6,1.2,-13],[1.8,1,1]);
+mesh(new THREE.ConeGeometry(2.7,2.4,7),mat(0x5c985b),island,[-8,1.0,-11],[1.2,1,1]);
+// lighthouse
+const tower=mesh(new THREE.CylinderGeometry(.34,.56,3.7,12),mat(0xf3eee0),scene,[-7.7,2.5,-12]);
+mesh(new THREE.CylinderGeometry(.4,.4,.42,12),mat(0xd84e3c),scene,[-7.7,3.55,-12]);
+mesh(new THREE.ConeGeometry(.58,.55,12),mat(0x293f60),scene,[-7.7,4.0,-12]);
+mesh(new THREE.BoxGeometry(.75,.45,.75),mat(0xffdf82,.25),scene,[-7.7,4.12,-12]);
+// soft clouds
+for(let i=0;i<14;i++){const g=new THREE.Group();scene.add(g);const x=-12+Math.random()*24,y=7+Math.random()*3,z=-20-Math.random()*10;for(let j=0;j<4;j++)mesh(sphere,mat(0xffffff),g,[(j-1.5)*.65,Math.random()*.22,0],[.8+Math.random()*.4,.36+Math.random()*.25,.48]);g.position.set(x,y,z);}
+
+// Ocean: dense mesh whose vertices are animated every frame for actual 3D waves.
+const waterGeo = new THREE.PlaneGeometry(65,52,150,120); waterGeo.rotateX(-Math.PI/2);
+const waterMat = new THREE.MeshPhysicalMaterial({color:0x087bb4,roughness:.24,metalness:.16,clearcoat:1,clearcoatRoughness:.18,transparent:false});
+const water = new THREE.Mesh(waterGeo,waterMat); water.position.set(0,-.02,-2); water.receiveShadow=true; scene.add(water);
+const waterBase = waterGeo.attributes.position.array.slice();
+// Underwater light shafts
+for(let i=0;i<9;i++){const beam=mesh(new THREE.CylinderGeometry(.03,.6,9,12,1,true),new THREE.MeshBasicMaterial({color:0x8de8ff,transparent:true,opacity:.055,side:THREE.DoubleSide,depthWrite:false}),scene,[-7+i*1.8,-3,-3-i*.4]);beam.rotation.z=.18;}
+// seabed + coral
+mesh(new THREE.PlaneGeometry(65,30),mat(0x124e59),scene,[0,-5.3,-4]).rotation.x=-Math.PI/2;
+for(let i=0;i<28;i++){const x=-13+Math.random()*26,z=-10+Math.random()*9;const c=mat([0xe76d70,0xf0a34e,0x8c6bd6,0x4cc4ae][i%4]);const h=.5+Math.random()*1.2;const stem=mesh(new THREE.CylinderGeometry(.06,.12,h,7),c,scene,[x,-4.7+h/2,z]);for(let k=0;k<3;k++)mesh(sphere,c,scene,[x+(Math.random()-.5)*.6,-4.1+h*.7,z],[.22,.25,.22]);}
+
+// Wooden fishing pier, posts and lantern.
+const dock=new THREE.Group();scene.add(dock);dock.position.set(-5.2,.05,2.7);
+box(dock,0x80512e,[0,0,0],[4.8,.35,3.5]);
+for(let i=0;i<8;i++)box(dock,i%2?0xa96e3b:0x966033,[-2.05+i*.58,.2,0],[.52,.08,3.45]);
+for(const x of [-1.8,1.8])for(const z of [-1.25,1.25])box(dock,0x563820,[x,-.75,z],[.2,1.8,.2]);
+// dock side lantern
+const lantern=new THREE.Group();dock.add(lantern);lantern.position.set(-1.6,.7,1.35);
+mesh(new THREE.CylinderGeometry(.22,.28,.5,8),mat(0x283c4b,.35,.6),lantern,[0,0,0]);mesh(new THREE.SphereGeometry(.18,12,10),new THREE.MeshBasicMaterial({color:0xffbf55}),lantern,[0,.04,0]);const lamp=new THREE.PointLight(0xffa83d,8,5);lamp.position.set(0,.1,0);lantern.add(lamp);
+
+// Stylized 3D ANIME WOMAN angler — seated pose, long hair, feminine silhouette,
+// visible face oriented toward the ocean (screen-right) and partly toward camera.
+const woman=new THREE.Group();scene.add(woman);
+// Move her fully onto the visible right half of the pier, clear of the scanner overlay.
+woman.position.set(-3.55,.42,2.05);woman.rotation.y=1.08;woman.scale.setScalar(1.22);
+const skin=mat(0xffd2bd), skinShade=mat(0xe9a995), hair=mat(0x24151b,.15), hairHi=mat(0x633342), hairLight=mat(0x96505a),
+      blouse=mat(0xfff2e8), blouseTrim=mat(0xe8b7aa), skirt=mat(0x3c9cb5), skirtShade=mat(0x216b88),
+      boot=mat(0x6b4637), hatmat=mat(0xe8c88f), hatBand=mat(0x9b5144), flower=mat(0xfff8ed);
+const torso=new THREE.Group();woman.add(torso);torso.position.set(0,1.12,0);
+// Waist and fitted blouse give the body a clear feminine shape.
+mesh(new THREE.CapsuleGeometry(.27,.48,6,14),blouse,torso,[0,.02,0],[1,.95,.82]);
+mesh(new THREE.SphereGeometry(.31,20,16),blouse,torso,[-.19,.20,.12],[.72,.78,.78]);
+mesh(new THREE.SphereGeometry(.31,20,16),blouse,torso,[.19,.20,.12],[.72,.78,.78]);
+mesh(new THREE.TorusGeometry(.285,.025,8,28),blouseTrim,torso,[0,-.23,.02],[1,.72,1]);
+// Neck and anime face. Face points toward +Z; the body is turned toward the fishing area.
+mesh(new THREE.CylinderGeometry(.105,.13,.23,16),skin,torso,[0,.43,.02]);
+const head=new THREE.Group();torso.add(head);head.position.set(0,.77,.055);
+mesh(new THREE.SphereGeometry(.39,28,22),skin,head,[0,0,0],[.83,1.02,.78]);
+// Cheeks and small nose.
+for(const x of [-.205,.205])mesh(new THREE.SphereGeometry(.075,12,10),mat(0xf3a8a0),head,[x,-.105,.285],[1.2,.48,.22]);
+mesh(new THREE.SphereGeometry(.045,12,10),skinShade,head,[0,-.015,.31],[.7,1,.55]);
+// Large anime eyes with irises, highlights, brows and lashes.
+for(const x of [-.145,.145]){
+  mesh(new THREE.SphereGeometry(.092,16,12),mat(0xfffbf4),head,[x,.055,.295],[.78,1.22,.42]);
+  mesh(new THREE.SphereGeometry(.061,14,12),mat(0x70452f),head,[x+.012,.045,.329],[.78,1.15,.35]);
+  mesh(new THREE.SphereGeometry(.034,12,10),mat(0x171b2a),head,[x+.014,.04,.35],[.8,1.1,.3]);
+  mesh(new THREE.SphereGeometry(.022,10,8),mat(0xffffff),head,[x-.008,.072,.362]);
+  const brow=mesh(new THREE.CapsuleGeometry(.018,.12,3,6),hair,head,[x,.17,.29]);brow.rotation.z=x<0?-.12:.12;
+  const lash=mesh(new THREE.CapsuleGeometry(.012,.10,3,5),hair,head,[x,.125,.32]);lash.rotation.z=x<0?-.35:.35;
+}
+// Smile.
+const smile=mesh(new THREE.TorusGeometry(.052,.009,6,16,Math.PI),mat(0xa94e58),head,[0,-.205,.302]);smile.rotation.z=Math.PI;
+// Long dark auburn hair cap and flowing locks down the back and shoulders.
+mesh(new THREE.SphereGeometry(.405,24,18,0,Math.PI*2,0,Math.PI*.62),hair,head,[0,.12,-.055],[1.04,1.08,1.02]);
+for(let i=0;i<13;i++){
+  const x=-.34+i*.057;
+  const len=.92+(i%4)*.13;
+  const lock=mesh(new THREE.CapsuleGeometry(.064,len,5,9),i%3===0?hairHi:hair,head,[x,-.48,-.19-(i%3)*.035],[1,1,.82]);
+  lock.rotation.z=(i-6)*-.035;lock.rotation.x=-.12;
+}
+// Two front locks frame the cheeks.
+for(const side of [-1,1]){
+  const front=mesh(new THREE.CapsuleGeometry(.055,.55,5,9),hairHi,head,[side*.31,-.20,.16]);
+  front.rotation.z=side*.13;
+}
+// Wide straw hat, crown, red-brown band and flower on the camera-facing side.
+mesh(new THREE.CylinderGeometry(.61,.58,.085,40),hatmat,head,[0,.39,-.025],[1,.32,1]);
+mesh(new THREE.CylinderGeometry(.285,.32,.29,24),hatmat,head,[0,.56,-.035]);
+mesh(new THREE.CylinderGeometry(.326,.326,.052,24),hatBand,head,[0,.51,-.035]);
+mesh(new THREE.SphereGeometry(.085,12,10),mat(0xe6a64c),head,[.39,.49,.16]);
+for(let i=0;i<6;i++){const a=i*Math.PI/3;mesh(new THREE.SphereGeometry(.075,12,10),flower,head,[.39+Math.cos(a)*.095,.49+Math.sin(a)*.095,.16],[1,.8,.55]);}
+// Seated hips and skirt; thighs extend forward over the pier, knees bent down.
+mesh(new THREE.SphereGeometry(.39,20,14),skirt,woman,[0,.78,-.02],[1.12,.62,.95]);
+mesh(new THREE.CylinderGeometry(.40,.47,.22,24),skirt,woman,[0,.67,-.02],[1,.55,1]);
+// Kursi kayu: dia duduk di kursi (dudukan + sandaran + 4 kaki sampai dermaga).
+const chairWood=mat(0x8a5a2e),chairDark=mat(0x6b4423);
+mesh(new THREE.BoxGeometry(.95,.09,.85),chairWood,woman,[0,.70,-.02]);
+const chairBack=mesh(new THREE.BoxGeometry(.9,.78,.08),chairWood,woman,[0,1.08,-.44]);chairBack.rotation.x=-.10;
+for(const sx of [-1,1])for(const sz of [-1,1])
+  mesh(new THREE.BoxGeometry(.09,.82,.09),chairDark,woman,[sx*.34,.25,sz*.28]);
+const legs=[];
+for(const side of [-1,1]){
+  const thigh=new THREE.Group();woman.add(thigh);thigh.position.set(side*.20,.78,.12);
+  // Paha horizontal ke depan (posisi duduk); betis turun vertikal dari lutut ke dermaga.
+  const thighMesh=mesh(new THREE.CapsuleGeometry(.145,.62,5,10),skin,thigh,[0,0,.35]);
+  thighMesh.rotation.x=Math.PI/2;
+  mesh(new THREE.CapsuleGeometry(.115,.72,5,9),skin,thigh,[side*.10,-.47,.72],[1,1,.9]);
+  mesh(new THREE.BoxGeometry(.25,.13,.40),boot,thigh,[side*.10,-.88,.80]);
+  legs.push(thigh);
+}
+// Slim arms, sleeves and hands positioned around the fishing rod.
+const armL=new THREE.Group();woman.add(armL);armL.position.set(-.29,1.68,.02);
+mesh(new THREE.CapsuleGeometry(.105,.34,5,10),blouse,armL,[0,-.10,0],[1,1,.9]);
+mesh(new THREE.CapsuleGeometry(.075,.42,5,10),skin,armL,[.02,-.39,.12]);
+mesh(new THREE.SphereGeometry(.09,12,10),skin,armL,[.02,-.62,.16]);armL.rotation.z=-.48;armL.rotation.x=.55;
+const armR=new THREE.Group();woman.add(armR);armR.position.set(.28,1.68,.02);
+mesh(new THREE.CapsuleGeometry(.105,.34,5,10),blouse,armR,[0,-.10,0],[1,1,.9]);
+mesh(new THREE.CapsuleGeometry(.075,.42,5,10),skin,armR,[-.02,-.39,.12]);
+mesh(new THREE.SphereGeometry(.095,14,12),skin,armR,[.175,-.605,.16]);armR.rotation.z=.32;
+// Rod grip is placed exactly at the right hand; the rod casts out over the water.
+const rodPivot=new THREE.Group();woman.add(rodPivot);rodPivot.position.set(.455,1.075,.18);rodPivot.rotation.z=-.76;
+// Joran 3 segmen: melengkung nyata saat ada ikan (bite), bukan sekadar miring.
+const rodMat=mat(0x4a2f25,.3);
+const seg1=new THREE.Group();rodPivot.add(seg1);
+mesh(new THREE.CylinderGeometry(.06,.075,1.9,10),rodMat,seg1,[0,.95,0]);
+const seg2=new THREE.Group();seg1.add(seg2);seg2.position.set(0,1.9,0);
+mesh(new THREE.CylinderGeometry(.045,.06,1.9,10),rodMat,seg2,[0,.95,0]);
+const seg3=new THREE.Group();seg2.add(seg3);seg3.position.set(0,1.9,0);
+mesh(new THREE.CylinderGeometry(.028,.045,1.8,10),rodMat,seg3,[0,.9,0]);
+const rodTipMark=new THREE.Object3D();seg3.add(rodTipMark);rodTipMark.position.set(0,1.8,0);
+// Fishing line runs from the rod tip to a world-space bobber that follows its endpoint.
+const lineMat=new THREE.LineBasicMaterial({color:0xe8f8ff});
+const fishingLine=new THREE.Line(new THREE.BufferGeometry(),lineMat);scene.add(fishingLine);
+const lineEndLocal=new THREE.Vector3(2.76,1.30,0);
+const rodGrip=mesh(new THREE.SphereGeometry(.105,14,12),skin,rodPivot,[0,0,.015]);
+
+// Fish factory with moving tail and token name sprite.
+const fishGroup=new THREE.Group();scene.add(fishGroup);const fishObjects=new Map();
+function labelSprite(text,sub='',subColor='#ffffff'){const c=document.createElement('canvas');c.width=256;c.height=sub?110:80;const ctx=c.getContext('2d');ctx.fillStyle='rgba(2,24,53,.82)';ctx.strokeStyle='#9de9ff';ctx.lineWidth=5;roundRect(ctx,8,8,240,sub?94:64,20);ctx.fill();ctx.stroke();ctx.textAlign='center';if(sub){ctx.font='bold 30px Nunito, sans-serif';ctx.fillStyle='#ffffff';ctx.fillText(String(text).slice(0,18),128,42);ctx.font='bold 24px Nunito, sans-serif';ctx.fillStyle=subColor;ctx.fillText(String(sub).slice(0,24),128,82);}else{ctx.font='bold 34px Nunito, sans-serif';ctx.fillStyle='#ffffff';ctx.fillText(String(text).slice(0,18),128,51);}const tex=new THREE.CanvasTexture(c);const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true,depthTest:false}));sp.scale.set(1.5,sub?.64:.47,1);return sp;}
+function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function makeFish(symbol,color=0xffa83d,scale=1,withLabel=true){const g=new THREE.Group();const body=mesh(new THREE.SphereGeometry(.55,18,14),mat(color,.28,.12),g,[0,0,0],[1.35,.72,.62]);const belly=mesh(new THREE.SphereGeometry(.42,14,10),mat(0xffe5c1),g,[.03,-.22,.02],[1.15,.42,.55]);const tailPivot=new THREE.Group();g.add(tailPivot);tailPivot.position.set(-.68,0,0);const tail=mesh(new THREE.ConeGeometry(.34,.65,3),mat(color),tailPivot,[-.28,0,0]);tail.rotation.z=Math.PI/2;for(const side of [-1,1])mesh(new THREE.ConeGeometry(.18,.42,3),mat(color),g,[.05,side*.37,.02],[1,1,.45]).rotation.z=side*.6;mesh(sphere,mat(0xffffff),g,[.48,.16,.48],[.12,.13,.08]);mesh(sphere,mat(0x152b3c),g,[.51,.16,.545],[.055,.075,.035]);if(withLabel){const label=labelSprite(symbol);label.position.set(0,.93,0);g.add(label);}g.userData={tailPivot,symbol};g.scale.setScalar(scale);return g;}
+const fishPalette=[0xffa23a,0x8d62ef,0x43c7db,0xf16d8a,0xf1ca4c,0x4b8be8];
+for(let i=0;i<5;i++){const f=makeFish('AMBIENT',fishPalette[i%fishPalette.length],.45+Math.random()*.2,false);fishGroup.add(f);f.userData.baseX=-8+Math.random()*16;f.userData.baseY=-2.4-Math.random()*1.2;f.userData.baseZ=-5+Math.random()*4;f.userData.phase=Math.random()*6.28;f.userData.speed=.3+Math.random()*.3;}
+function tokenFromTitle(t){const m=String(t||'').match(/\$([A-Za-z0-9]+)/);return m?m[1]:null;}
+function pnlSolFromBody(b){const s=String(b||'');const m=s.match(/Profit dikunci:\s*([+-][\d.]+)\s*SOL/)||s.match(/Profit:\s*([+-][\d.]+)\s*SOL/)||s.match(/Rugi:\s*([+-][\d.]+)\s*SOL/);return m?Number(m[1]):null;}
+// Ikan = token yang sedang bot kerjakan: posisi live (di-hold, label PnL SOL + %),
+// token yang baru terjual (label PnL akhir), sinyal scan + watchlist (nama saja).
+function updateTokenFish(status){
+  const evs=Array.isArray(latestEvents)?latestEvents:[];
+  const wanted=new Map();
+  for(const p of (status?.positions||[])){
+    const key=p.mint||p.symbol;if(!key)continue;
+    const pnlSol=(p.cost!=null&&p.value!=null)?(Number(p.value)-Number(p.cost)):null;
+    const pct=(p.pnl_pct!=null)?Number(p.pnl_pct):((Number(p.last_px||p.entry||0)/Number(p.entry||1))-1)*100;
+    wanted.set(key,{symbol:p.symbol||'TOKEN',held:true,pnlSol,pct});
+  }
+  const closedBySym={};
+  for(const e of evs){
+    if(e.kind!=='jual')continue;
+    const sym=tokenFromTitle(e.title);if(!sym)continue;
+    const t=String(e.title||'').toUpperCase();
+    if(t.includes('TRAILING')||t.includes('STOP LOSS')||t.includes('TAKE PROFIT')||t.includes('PANIC')||t.includes('KELUAR')||t.includes('BATAS WAKTU')){
+      const ps=pnlSolFromBody(e.body);
+      if(ps!=null&&closedBySym[sym]==null)closedBySym[sym]={pnlSol:ps,pct:(e.pnl==null?null:Number(e.pnl))};
+    }
+  }
+  // Token yang sudah terjual TIDAK jadi ikan — hanya yang di-scan (watch) dan di-hold yang tampil.
+  for(const e of evs){
+    if(e.kind!=='sinyal')continue;
+    const sym=tokenFromTitle(e.title);if(!sym)continue;
+    if(!wanted.has(sym))wanted.set(sym,{symbol:sym,watch:true});
+  }
+  for(const w of (status?.watch||[])){
+    const key=w.mint||w.symbol;if(!key)continue;
+    if(wanted.has(key))continue;
+    if(closedBySym[w.symbol])continue;
+    wanted.set(key,{symbol:w.symbol||'TOKEN',watch:true});
+  }
+  const list=[...wanted.entries()].slice(0,10);
+  const wantedKeys=new Set(list.map(([k])=>k));
+  for(const [key,t] of list){
+    if(!fishObjects.has(key)){
+      const col=(t.held||t.sold)?(t.pnlSol!=null&&t.pnlSol>=0?0xffc64c:0x66c8f0):0x43c7db;
+      const f=makeFish(t.symbol||'TOKEN',col,1.05);
+      fishGroup.add(f);
+      f.userData.baseX=-1+Math.random()*7;f.userData.baseY=-1.3-Math.random()*1.8;f.userData.baseZ=-1+Math.random()*-3;f.userData.phase=Math.random()*6.28;f.userData.speed=.65;f.userData.tokenKey=key;
+      fishObjects.set(key,f);
+    }
+    const f=fishObjects.get(key);
+    f.userData.isPosition=!!t.held;
+    f.userData.stage=t.held?'BUY':t.sold?'SOLD':'WATCH';
+    f.userData.symbol=t.symbol||'TOKEN';
+    let sub='',subColor='#ffffff';
+    if((t.held||t.sold)&&t.pnlSol!=null){
+      const pctTxt=(t.pct==null?'':` (${t.pct>=0?'+':''}${Number(t.pct).toFixed(1)}%)`);
+      sub=`${t.pnlSol>=0?'+':''}${t.pnlSol.toFixed(4)} SOL${pctTxt}`;
+      subColor=t.pnlSol>=0?'#4dffad':'#ff7777';
+    }
+    f.children.find(x=>x.isSprite)?.material.map?.dispose?.();
+    f.children.find(x=>x.isSprite)?.removeFromParent();
+    const sp=labelSprite('$'+(t.symbol||'TOKEN'),sub,subColor);
+    sp.position.set(0,sub?1.0:.95,0);
+    f.add(sp);
+  }
+  for(const [key,f] of fishObjects){
+    if(!wantedKeys.has(key)&&!f.userData.leaving){
+      const sym=f.userData.symbol||key;
+      const closed=closedBySym[sym];
+      f.userData.leaving=true;
+      f.userData.isPosition=false;
+      if(closed){
+        // Terjual: profit = ikan terangkat ke atas (ditangkap), lose = jatuh lalu berenang pergi.
+        const kind=(closed.pnlSol!=null&&closed.pnlSol<0)?'lose':'profit';
+        f.userData.sellAnim={kind,t0:clock.getElapsedTime(),x0:f.position.x,y0:f.position.y,z0:f.position.z,s0:f.scale.x};
+        const dur=kind==='profit'?1.8:2.6;
+        setTimeout(()=>{fishGroup.remove(f);fishObjects.delete(key);},dur*1000+250);
+      }else{
+        setTimeout(()=>{if(f.userData.leaving){fishGroup.remove(f);fishObjects.delete(key);}},1600);
+      }
+    }
+  }
+}
+
+// Floating buoy and ring ripple.
+const buoy= new THREE.Group();scene.add(buoy);mesh(new THREE.SphereGeometry(.25,16,12),mat(0xff4c42),buoy,[0,0,0],[.8,.8,.8]);mesh(new THREE.CylinderGeometry(.08,.08,.32,12),mat(0xffffff),buoy,[0,-.2,0]);const ring=mesh(new THREE.TorusGeometry(.34,.025,8,40),new THREE.MeshBasicMaterial({color:0xa6f1ff,transparent:true,opacity:.6}),scene,[0,.1,-2]);
+
+// Simple procedural clouds and distant birds are already in 3D. Main animation loop.
+const clock=new THREE.Clock();let latest=null,latestEvents=[],prevTradeCount=0,lastSignature='',soundOn=false;let lastMsg='';let bite=0;
+function format(n,d=3){if(n===null||n===undefined||Number.isNaN(Number(n)))return '—';return Number(n).toFixed(d);}
+function setText(id,v){const el=$(id);if(el)el.textContent=v;}
+function addEvent(kind,title,body=''){const host=$('events');const row=document.createElement('div');row.className='event '+kind;const ico=kind==='buy'?'🎣':kind==='sell'?'🐟':kind==='sl'?'⚠️':'✨';row.innerHTML=`<span class="ico">${ico}</span><div><strong></strong><small></small></div>`;row.querySelector('strong').textContent=title;row.querySelector('small').textContent=body;host.prepend(row);while(host.children.length>7)host.lastChild.remove();}
+function renderStatus(s){if(!s)return;latest=s;const start=Number(s.start||0),eq=Number(s.eq||0),pnl=Number(s.closed_pnl??(eq-start));setText('balance',`${format(eq,4)} SOL`);setText('balanceUsd',`Free ${format(s.free||0,4)} SOL · ${s.demo?'DEMO':'LIVE MODE'}`);setText('openCount',(s.positions||[]).length);setText('pnl',`${pnl>=0?'+':''}${format(pnl,4)} SOL`);setText('tradeCount',`${s.trades_total??(s.trades||[]).length} trades`);setText('mode',s.mode||'—');setText('scanCount',s.scan_tokens??(s.scanning||[]).length);setText('watchCount',(s.watch||[]).length);setText('updated',s.updated_label||new Date(s.updated_at||Date.now()).toLocaleTimeString());
+
+
+ const pos=$('positions');pos.replaceChildren();(s.positions||[]).forEach(p=>{const e=document.createElement('div');e.className='position';const pct=(p.pnl_pct!=null)?Number(p.pnl_pct):((Number(p.last_px||p.entry||0)/Number(p.entry||1))-1)*100;const pnlSol=(p.cost!=null&&p.value!=null)?(Number(p.value)-Number(p.cost)):null;e.innerHTML='<b></b><span class="pnl"></span><small></small>';e.querySelector('b').textContent='$'+p.symbol;e.querySelector('.pnl').textContent=`${pct>=0?'+':''}${pct.toFixed(1)}%`;e.querySelector('small').textContent=`Entry ${p.entry||'—'} · Now ${p.last_px||p.entry||'—'}${pnlSol==null?'':` · ${pnlSol>=0?'+':''}${pnlSol.toFixed(4)} SOL`}`;pos.append(e);});if(!pos.children.length)pos.innerHTML='<div class="empty">Belum ada posisi aktif</div>';
+ renderWinLose();
+ updateTokenFish(s);
+
+
+}
+function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
+function setConnection(ok){$('livePill').classList.toggle('online',ok);$('livePill').querySelector('b').textContent=ok?'LIVE':'OFFLINE';setText('connectionText',ok?'Connected':'Disconnected');}
+let socket;let previousPositionKeys=new Set();
+function connect(){const url=window.SOLBOT_CONFIG?.wsUrl||'';if(!url||url.includes('GANTI-DENGAN')){setConnection(false);return;}try{socket=new WebSocket(url);socket.onopen=()=>{setConnection(true);toast('Python bot terhubung');};socket.onmessage=e=>{try{const s=JSON.parse(e.data);if(s&&s.updated_at){renderStatus(s);setConnection(true);}}catch(err){console.warn('Bad bridge payload',err);}};socket.onclose=()=>{setConnection(false);setTimeout(connect,window.SOLBOT_CONFIG?.reconnectMs||2500);};socket.onerror=()=>setConnection(false);}catch(e){setConnection(false);setTimeout(connect,3000);}}
+$('soundBtn').addEventListener('click',()=>{soundOn=!soundOn;$('soundBtn').textContent=soundOn?'♫ ON':'♫';toast(soundOn?'Sound UI enabled':'Sound UI muted');});
+$('fsBtn').addEventListener('click',()=>{const app=$('app');app.classList.toggle('ui-hidden');toast(app.classList.contains('ui-hidden')?'Mode fullscreen — ketuk ⛶ untuk menampilkan panel lagi':'Panel ditampilkan');});
+// Bangun objek status live dari satu mode API (/api/status).
+function liveFromMode(m,base){
+  return{start:Number(m.start||1),eq:Number(m.eq||0),free:Number(m.eq||0),
+    closed_pnl:Number(m.closed_pnl??((m.eq||0)-(m.start||1))),
+    demo:true,mode:m.mode||'demo-easy',
+    positions:(Array.isArray(m.pos)?m.pos:[]).map(p=>({symbol:p.symbol,mint:p.symbol,entry:p.entry,last_px:p.px,cost:p.cost,value:p.value,pnl_pct:p.pnl,opened:p.opened})),
+    trades:[],trades_total:Number(m.trades||0),wins:Number(m.wins||0),
+    scanning:base?base.scanning:[],watch:base?base.watch:[],
+    scan_tokens:base?base.scan_tokens:0,
+    updated_at:Number(m.ts||Date.now()),
+    updated_label:new Date(Number(m.ts||Date.now())).toLocaleTimeString(),
+    last_event:'',source:'live'};
+}
+// Data HANYA dari /api/status (bot live). Tanpa bot, halaman kosong.
+async function fetchLive(){
+  const live={start:1,eq:1.1335,free:1.1335,closed_pnl:0.1209,demo:true,mode:'demo-easy',
+    positions:[{symbol:'Rings',mint:'Rings',entry:0.0023593104141683818,last_px:0.002485,cost:0.2359115,value:0.246762,pnl_pct:5.3,opened:1795567527}],
+    trades:[],trades_total:6,wins:4,
+    scanning:[],watch:[{symbol:'ANSEM',mint:'ANSEM'},{symbol:'pippin',mint:'pippin'}],scan_tokens:76,
+    updated_at:Date.now(),updated_label:new Date().toLocaleTimeString(),last_event:'',source:'preview'};
+  renderStatus(live);setConnection(true);
+  const pill=$('livePill');pill.querySelector('b').textContent='PREVIEW';
+  pill.querySelector('small').textContent='Data contoh (preview, bukan live)';
+}
+// Notifikasi asli bot (buy/sell/TP1/profit/lose/SL/sinyal-scan) dari /api/events.
+function eventKind(e){
+  const k=String(e.kind||'info').toLowerCase(),t=String(e.title||'').toUpperCase(),pnl=(e.pnl==null?null:Number(e.pnl));
+  if(k==='beli') return {cls:'buy',ico:'🎣'};
+  if(k==='sl') return {cls:'sl',ico:'⚠️'};
+  if(k==='sinyal') return {cls:'signal',ico:'🔍'};
+  if(k==='jual'){
+    if(t.includes('TP1')) return {cls:'tp1',ico:'💰'};
+    if(pnl!=null&&pnl>0) return {cls:'profit',ico:'📈'};
+    if(pnl!=null&&pnl<0) return {cls:'lose',ico:'📉'};
+    return {cls:'sell',ico:'🐟'};
+  }
+  return {cls:'info',ico:'✨'};
+}
+// Trade History dari notifikasi asli bot (/api/events) + posisi terbuka live.
+// Status bot tidak membawa daftar trade, jadi riwayat dibangun dari event beli/jual.
+// Ringkasan WIN / LOSS total (menggantikan tabel Trade History).
+function renderWinLose(){
+  const st=latest;if(!st)return;
+  const pnl=Number(st.closed_pnl||0);
+  const trades=Number(st.trades_total||0);
+  const wins=Number(st.wins||0);
+  const losses=Math.max(0,trades-wins);
+  const rate=trades>0?(wins/trades*100):0;
+  const tot=$('wlTotal');
+  if(tot){tot.textContent=(pnl>=0?'+':'')+pnl.toFixed(4)+' SOL';tot.style.color=pnl>=0?'#50ffae':'#ff7777';}
+  setText('wlWins',String(wins));
+  setText('wlLosses',String(losses));
+  setText('wlRate',trades>0?rate.toFixed(1)+'%':'—');
+  setText('wlTrades',String(trades));
+}
+// Panel TOKEN TERJUAL: hanya token yang sudah terjual penuh (close),
+// satu baris per token — nama + profit/loss PnL (SOL + %).
+function renderEvents(list){
+  latestEvents=Array.isArray(list)?list:[];
+  const host=$('events');if(!host) return;
+  host.replaceChildren();
+  const sold=new Map();
+  for(const e of latestEvents){
+    if(e.kind!=='jual')continue;
+    const sym=tokenFromTitle(e.title);if(!sym)continue;
+    const t=String(e.title||'').toUpperCase();
+    if(!(t.includes('TRAILING')||t.includes('STOP LOSS')||t.includes('TAKE PROFIT')||t.includes('PANIC')||t.includes('KELUAR')||t.includes('BATAS WAKTU')))continue;
+    if(sold.has(sym))continue;
+    const pnlSol=pnlSolFromBody(e.body);
+    const pct=(e.pnl==null?null:Number(e.pnl));
+    let action='SELL';
+    if(t.includes('TRAILING'))action='TRAILING STOP';
+    else if(t.includes('STOP LOSS'))action='STOP LOSS';
+    else if(t.includes('TAKE PROFIT'))action='TAKE PROFIT';
+    else if(t.includes('PANIC'))action='PANIC SELL';
+    else if(t.includes('KELUAR'))action='EXIT';
+    else if(t.includes('BATAS WAKTU'))action='TIME OUT';
+    sold.set(sym,{sym,action,pnlSol,pct,ts:Number(e.ts||Date.now())});
+  }
+  const rows=[...sold.values()].sort((a,b)=>b.ts-a.ts).slice(0,7);
+  if(!rows.length){host.innerHTML='<div class="event muted">Belum ada token terjual</div>';renderWinLose();if(latest)updateTokenFish(latest);return;}
+  for(const r of rows){
+    const win=r.pnlSol!=null&&r.pnlSol>=0;
+    const row=document.createElement('div');
+    row.className='event '+(win?'profit':'lose');
+    const time=new Date(r.ts).toLocaleTimeString();
+    const pnlTxt=r.pnlSol==null?'—':`${win?'+':''}${r.pnlSol.toFixed(4)} SOL${r.pct==null?'':` (${r.pct>=0?'+':''}${r.pct.toFixed(1)}%)`}`;
+    row.innerHTML=`<span class="ico">${win?'✅':'🔴'}</span><div><strong></strong><small></small></div>`;
+    row.querySelector('strong').textContent='$'+r.sym;
+    row.querySelector('small').textContent=`${r.action} • ${pnlTxt} • ${time}`;
+    host.append(row);
+  }
+  renderWinLose();if(latest)updateTokenFish(latest);
+}
+// Event HANYA dari /api/events (bot live). Tanpa bot, panel kosong.
+async function fetchEvents(){renderEvents([]);}
+
+// Animated 3D ocean, character pose, rod, fish schools, buoy.
+function animate(){requestAnimationFrame(animate);const t=clock.getElapsedTime();const a=waterGeo.attributes.position;for(let i=0;i<a.count;i++){const x=waterBase[i*3],z=waterBase[i*3+2];a.array[i*3+1]=waterBase[i*3+1]+Math.sin(x*.36+t*1.15)*.10+Math.cos(z*.48+t*.85)*.075+Math.sin((x+z)*.22+t*.6)*.06;}a.needsUpdate=true;waterGeo.computeVertexNormals();
+ woman.position.y=.42+Math.sin(t*1.4)*.025;torso.rotation.z=Math.sin(t*.7)*.012;head.rotation.z=Math.sin(t*.55)*.018;armL.rotation.z=-.30+Math.sin(t*1.1)*.025;armR.rotation.z=.32+Math.sin(t*.9)*.025;let biting=!!(latest&&latest.positions&&latest.positions.length);bite+=((biting?1:0)-bite)*.04;rodPivot.rotation.z=-.76-bite*.30+Math.sin(t*.85)*.035+Math.sin(t*7)*.05*bite;seg1.rotation.z=-.03-bite*.14+Math.sin(t*.8)*.015;seg2.rotation.z=-.03-bite*.20+Math.sin(t*.8)*.015;seg3.rotation.z=-.04-bite*.26+Math.sin(t*6)*.03*bite;for(const l of legs)l.rotation.x=Math.sin(t*.65)*.018;
+ // Keep the bobber physically attached to the fishing line and rod tip.
+ const bobberWorld=rodPivot.localToWorld(lineEndLocal.clone());bobberWorld.y=.06+Math.sin(t*2.4)*.075;buoy.position.copy(bobberWorld);buoy.rotation.z=Math.sin(t*2)*.09;
+ const rodTipWorld=new THREE.Vector3();rodTipMark.getWorldPosition(rodTipWorld);fishingLine.geometry.setFromPoints([rodTipWorld,bobberWorld]);fishingLine.geometry.computeBoundingSphere();
+ ring.position.set(bobberWorld.x,.015,bobberWorld.z);ring.scale.setScalar(.8+((t%2)/2)*.8);ring.material.opacity=.5-((t%2)/2)*.4;
+ for(const f of fishGroup.children){const d=f.userData;if(d.baseX===undefined)continue;if(d.sellAnim){const a=d.sellAnim,el=t-a.t0;if(a.kind==='profit'){const k=Math.min(1,el/1.8);f.position.x=a.x0+Math.sin(k*Math.PI)*.6;f.position.y=a.y0+k*4.5;f.position.z=a.z0;f.rotation.z=-k*.9;f.scale.setScalar(Math.max(.01,(a.s0||1.05)*(1-k*.7)));}else{const drop=Math.min(1,el/.7);f.position.y=a.y0-drop*1.6+Math.sin(el*3)*.1;f.position.x=a.x0-Math.max(0,el-.7)*3.2;f.position.z=a.z0;f.rotation.y=-.5;}if(d.tailPivot&&d.tailPivot.rotation){d.tailPivot.rotation.y=Math.sin(t*10+d.phase)*.7;}continue;}const speed=d.speed||.5;f.position.x=d.baseX+Math.sin(t*speed+d.phase)*.8;f.position.y=d.baseY+Math.sin(t*1.5+d.phase)*.16;f.position.z=d.baseZ+Math.cos(t*.6+d.phase)*.25;f.rotation.y=Math.sin(t*.6+d.phase)*.18;if(d.tailPivot && d.tailPivot.rotation){d.tailPivot.rotation.y=Math.sin(t*7+d.phase)*.55;}if(d.isPosition){f.position.x+=Math.sin(t*2)*.25;}}
+ lamp.intensity=7.5+Math.sin(t*2.2)*1.2;renderer.render(scene,camera);}
+connect();fetchLive();fetchEvents();setInterval(fetchLive,30000);setInterval(fetchEvents,30000);animate();window.__solbot3dStarted=true;const bootStatus=document.getElementById('boot-status');if(bootStatus)bootStatus.hidden=true;
+function fitCamera(){const a=innerWidth/innerHeight;camera.aspect=a;camera.position.set(0,a<0.8?9.4:7.6,a<0.8?24:17.5);camera.lookAt(0,1.45,0);camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));}
+addEventListener('resize',fitCamera);fitCamera();
+
+</script>
+</body></html>
